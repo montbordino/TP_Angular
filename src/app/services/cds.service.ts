@@ -37,9 +37,5 @@ export class CdsService {
 
     return this.http.post<CD>('http://localhost:3000/CD', cd);
   }
-
-  static createCD(unNouveauCD: CD) {
-    
-  }
 }
 

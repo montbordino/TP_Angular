@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CD } from '../models/cd';
 import { map } from 'rxjs/operators';
-import { CdComponent } from '../cd/cd.component';
+import { Router} from "@angular/router";
 import { Validators } from '@angular/forms';
 import { CdsService } from '../services/cds.service';
 
@@ -16,7 +16,11 @@ export class NewCDComponent implements OnInit{
   formulaire!: FormGroup;
   currentCD$!: Observable<CD>;
 
-  constructor(private formBuilder: FormBuilder, private cdsService: CdsService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private cdsService: CdsService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     let unNouveauCD!: CD;
@@ -59,6 +63,7 @@ export class NewCDComponent implements OnInit{
     }
 
     this.cdsService.createCD(unNouveauCD).subscribe();
+    this.router.navigate(['']);
   }
 }
 
