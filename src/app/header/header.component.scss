@@ -1,0 +1,38 @@
+.mon-header {
+  height: 15vh;
+  border-bottom: solid 1px gray;
+  box-sizing: border-box;
+  padding: 0 1rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: blue;
+  }
+
+  li {
+    list-style: none;
+    margin: 0 1rem;
+    padding: 0;
+    display: inline-block;
+  }
+
+  nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+      color: blue;
+    }
+  }
+}

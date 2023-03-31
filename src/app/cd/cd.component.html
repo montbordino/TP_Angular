@@ -1,0 +1,14 @@
+<div class="cd-card">
+  <h3>{{unCd.title|uppercase}}</h3>
+  <p>Sortie le : {{unCd.dateDeSortie| date: 'dd/mm/yyyy'}}</p>
+  <p>Auteur : {{unCd.author}}</p>
+  <p>Prix : {{ unCd.price | currency: 'EUR'}}</p>
+  <p>En stock : <span [ngStyle]="{color:'rgb(0,'+ unCd.quantity+',0)'}">{{ unCd.quantity}}</span></p>
+  <button (click)="onAddCd()">Ajouter l'unité</button>
+
+  <p>
+    <a [routerLink]="['/cd/', unCd.id]"><button>Voir le détail</button></a>
+  </p>
+  <br>
+  <img [src]="unCd.thumbnail" [alt]="unCd.title">
+</div>
